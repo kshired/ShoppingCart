@@ -14,7 +14,7 @@ Projects just for understanding below topics.
 
 - [ ] 인증 방식
   - [ ] session-cookie를 이용한 구현
-  - [ ] JWT를 이용한 구현
+  - [x] JWT를 이용한 구현
 
 ### Front
 

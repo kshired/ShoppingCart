@@ -4,7 +4,7 @@ const users = require('../models/users');
 const secret = process.env.SECRET;
 
 module.exports = {
-  sign: async (user) => {
+  sign: (user) => {
     const payload = {
       name: user.name,
     };
@@ -15,10 +15,11 @@ module.exports = {
       issuer: 'kshired',
     });
   },
-  verify: async (token) => {
+  verify: (token) => {
     let decoded = null;
     try {
       decoded = jwt.verify(token, secret);
+      return `verified ${decoded.name}`;
     } catch (err) {
       if (err.message === 'jwt expired') {
         return 'expired token';

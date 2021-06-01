@@ -12,6 +12,44 @@ Projects just for understanding below topics.
 - [x] API 설계 및 ERD 정의
       ![erd](files/erd.png)
 
+- [ ] Users
+
+  - [x] Modeling
+  - [x] Login
+  - [x] Sign Up
+
+- [ ] Items
+
+  - [ ] Modeling
+  - [ ] Add Item
+  - [ ] Get Item information
+  - [ ] Delete Item
+  - [ ] Modify Item
+
+- [ ] Orders
+
+  - [ ] Modeling
+  - [ ] See orders
+  - [ ] New Order
+  - [ ] Cancel Order
+
+- [ ] Cart
+
+  - [ ] Modeling
+  - [ ] See cart
+  - [ ] Add item
+  - [ ] Modify item
+  - [ ] Delete item
+
+- [ ] Delivery
+
+  - [ ] Modeling
+  - [ ] See deliveries
+  - [ ] Add delivery
+  - [ ] Change delivery status
+
+## Auth
+
 - [ ] 인증 방식
   - [ ] session-cookie를 이용한 구현
   - [x] JWT를 이용한 구현

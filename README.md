@@ -1,2 +1,6 @@
 # ShoppingCart
-Projects just for understanding difference between session-cookie and jwt
+
+Projects just for understanding below topics.
+
+1. Difference between session-cookie and jwt
+2. Git-flow

@@ -17,35 +17,37 @@ Projects just for understanding below topics.
   - [x] Modeling
   - [x] Login
   - [x] Sign Up
+  - [ ] See Profile
+  - [ ] Modify Profile
 
 - [ ] Items
 
   - [ ] Modeling
   - [ ] Add Item
-  - [ ] Get Item information
+  - [ ] Get Item Information
   - [ ] Delete Item
   - [ ] Modify Item
 
 - [ ] Orders
 
   - [ ] Modeling
-  - [ ] See orders
+  - [ ] See Orders
   - [ ] New Order
   - [ ] Cancel Order
 
 - [ ] Cart
 
   - [ ] Modeling
-  - [ ] See cart
-  - [ ] Add item
-  - [ ] Modify item
-  - [ ] Delete item
+  - [ ] See Cart
+  - [ ] Add item in Cart
+  - [ ] Modify item in Cart
+  - [ ] Delete item in Cart
 
 - [ ] Delivery
 
   - [ ] Modeling
   - [ ] See deliveries
-  - [ ] Add delivery
+  - [ ] New delivery
   - [ ] Change delivery status
 
 ## Auth
@@ -56,4 +58,4 @@ Projects just for understanding below topics.
 
 ### Front
 
-- 서버의 기능만 가능하게 아주 간단히 구현하자
+- 기능만 가능하게 아주 간단히 구현하자

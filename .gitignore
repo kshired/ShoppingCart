@@ -117,3 +117,6 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+# sql files
+sql/
+config/

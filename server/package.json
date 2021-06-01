@@ -1,0 +1,26 @@
+{
+  "name": "shopping-cart",
+  "version": "1.0.0",
+  "description": "side-projects",
+  "main": "index.js",
+  "repository": "https://github.com/kshired/ShoppingCart.git",
+  "author": "kshired <shiroed1211@naver.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "global": "^4.4.0",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2",
+    "sequelize-cli": "^6.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "scripts": {
+    "dev": "nodemon --exec node index.js"
+  }
+}

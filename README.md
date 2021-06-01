@@ -13,7 +13,6 @@ Projects just for understanding below topics.
       ![erd](files/erd.png)
 
 - [ ] Users
-
   - [x] Modeling
   - [x] Login
   - [x] Sign Up
@@ -21,7 +20,6 @@ Projects just for understanding below topics.
   - [ ] Modify Profile
 
 - [ ] Items
-
   - [ ] Modeling
   - [ ] Add Item
   - [ ] Get Item Information
@@ -29,14 +27,12 @@ Projects just for understanding below topics.
   - [ ] Modify Item
 
 - [ ] Orders
-
   - [ ] Modeling
   - [ ] See Orders
   - [ ] New Order
   - [ ] Cancel Order
 
 - [ ] Cart
-
   - [ ] Modeling
   - [ ] See Cart
   - [ ] Add item in Cart
@@ -44,7 +40,6 @@ Projects just for understanding below topics.
   - [ ] Delete item in Cart
 
 - [ ] Delivery
-
   - [ ] Modeling
   - [ ] See deliveries
   - [ ] New delivery

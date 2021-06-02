@@ -126,3 +126,4 @@ migrations/
 # vscode settings
 .vscode/
 .DS_Store
+.prisma/migrations/

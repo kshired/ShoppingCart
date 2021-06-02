@@ -41,11 +41,11 @@ Projects just for understanding below topics.
   - [x] Modify item in Cart
   - [x] Delete item in Cart
 
-- [ ] Delivery
+- [x] Delivery
   - [x] Modeling
-  - [ ] See deliveries
-  - [ ] New delivery
-  - [ ] Change delivery status
+  - [x] See deliveries
+  - [x] New delivery
+  - [x] Change delivery status
 
 ## Auth
 

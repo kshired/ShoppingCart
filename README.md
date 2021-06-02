@@ -34,12 +34,12 @@ Projects just for understanding below topics.
   - [ ] New Order
   - [ ] Cancel Order
 
-- [ ] Cart
+- [x] Cart
   - [x] Modeling
-  - [ ] See Cart
-  - [ ] Add item in Cart
-  - [ ] Modify item in Cart
-  - [ ] Delete item in Cart
+  - [x] See Cart
+  - [x] Add item in Cart
+  - [x] Modify item in Cart
+  - [x] Delete item in Cart
 
 - [ ] Delivery
   - [x] Modeling

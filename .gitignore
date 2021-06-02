@@ -126,5 +126,5 @@ seeder.js
 
 # vscode settings
 .vscode/
-.DS_Store
+**/.DS_Store
 .prisma/migrations

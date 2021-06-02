@@ -21,8 +21,10 @@ Projects just for understanding below topics.
 
 - [ ] Item
   - [x] Modeling
-  - [ ] Add Item
+  - [x] Add Item
   - [ ] Get Item Information
+  - [ ] Get Items List
+    - [ ] Pagination
   - [ ] Delete Item
   - [ ] Modify Item
 

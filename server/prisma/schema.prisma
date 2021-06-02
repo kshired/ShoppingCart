@@ -12,7 +12,7 @@ generator client {
 
 model Users {
   id         Int        @id @default(autoincrement())
-  username   String     @db.VarChar(255)
+  username   String     @unique @db.VarChar(255)
   city       String     @db.VarChar(50)
   street     String     @db.VarChar(50)
   zipcode    String     @db.VarChar(10)
@@ -32,11 +32,12 @@ model CartItem {
 }
 
 model Items {
-  id          Int         @id @default(autoincrement())
-  order_date  DateTime    @default(now())
-  status      Boolean     @default(false)
-  cart_items  CartItem[]
-  order_items OrderItem[]
+  id             Int         @id @default(autoincrement())
+  name           String      @db.VarChar(100)
+  price          Int
+  stock_quantity Int
+  cart_items     CartItem[]
+  order_items    OrderItem[]
 }
 
 model OrderItem {

@@ -17,16 +17,16 @@ Projects just for understanding below topics.
   - [x] Login
   - [x] Sign Up
   - [x] See Profile
-  - [x] Modify Profile
+  - [x] Edit Profile
 
 - [ ] Item
   - [x] Modeling
   - [x] Add Item
-  - [ ] Get Item Information
+  - [x] Get Item Information
   - [ ] Get Items List
     - [ ] Pagination
-  - [ ] Delete Item
-  - [ ] Modify Item
+  - [x] Delete Item
+  - [x] Edit Item
 
 - [ ] Orders
   - [x] Modeling
@@ -56,6 +56,10 @@ Projects just for understanding below topics.
 ## CI / CD
 - [ ] Jenkins를 쓸지 Github Action을 사용 할 지 정하기
 - [ ] Docker 파일 구성
+
+## New Feature
+- [ ] 실시간 상담 기능 ( socket )
+- [ ] 
 
 ### Front
 

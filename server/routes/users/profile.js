@@ -10,6 +10,7 @@ const seeProfile = async (req, res) => {
   if (user) {
     const { username, city, zipcode, street } = user;
     res.status(200).send({
+      ok: true,
       username,
       city,
       zipcode,
@@ -18,6 +19,7 @@ const seeProfile = async (req, res) => {
     return;
   }
   res.status(401).send({
+    ok: false,
     message: 'user not exist',
   });
 };

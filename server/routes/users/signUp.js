@@ -18,10 +18,12 @@ const signUp = async (req, res) => {
     const token = jwt.sign(user);
 
     res.status(200).send({
+      ok: true,
       token,
     });
   } catch (err) {
     res.status(409).send({
+      ok: false,
       message: err.message,
     });
   }

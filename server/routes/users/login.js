@@ -16,17 +16,20 @@ const login = async (req, res) => {
     if (chk) {
       const token = jwt.sign(user);
       res.status(200).send({
+        ok: true,
         token,
       });
       return;
     } else {
       res.status(401).send({
+        ok: false,
         message: 'password is incorrect',
       });
       return;
     }
   }
   res.status(401).send({
+    ok: false,
     message: 'user not exist',
   });
 };

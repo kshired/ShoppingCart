@@ -12,14 +12,14 @@ Projects just for understanding below topics.
 - [x] API 설계 및 ERD 정의
       ![erd](files/erd.png)
 
-- [ ] Users
+- [x] Users
   - [x] Modeling
   - [x] Login
   - [x] Sign Up
-  - [ ] See Profile
-  - [ ] Modify Profile
+  - [x] See Profile
+  - [x] Modify Profile
 
-- [ ] Items
+- [ ] Item
   - [ ] Modeling
   - [ ] Add Item
   - [ ] Get Item Information
@@ -50,6 +50,10 @@ Projects just for understanding below topics.
 - [ ] 인증 방식
   - [ ] session-cookie를 이용한 구현
   - [x] JWT를 이용한 구현
+
+## CI / CD
+- [ ] Jenkins를 쓸지 Github Action을 사용 할 지 정하기
+- [ ] Docker 파일 구성
 
 ### Front
 

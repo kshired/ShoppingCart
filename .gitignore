@@ -120,6 +120,8 @@ dist
 # database files
 sql/
 config/
+seeders/
+migrations/
 
 # vscode settings
 .vscode/

@@ -20,27 +20,27 @@ Projects just for understanding below topics.
   - [x] Modify Profile
 
 - [ ] Item
-  - [ ] Modeling
+  - [x] Modeling
   - [ ] Add Item
   - [ ] Get Item Information
   - [ ] Delete Item
   - [ ] Modify Item
 
 - [ ] Orders
-  - [ ] Modeling
+  - [x] Modeling
   - [ ] See Orders
   - [ ] New Order
   - [ ] Cancel Order
 
 - [ ] Cart
-  - [ ] Modeling
+  - [x] Modeling
   - [ ] See Cart
   - [ ] Add item in Cart
   - [ ] Modify item in Cart
   - [ ] Delete item in Cart
 
 - [ ] Delivery
-  - [ ] Modeling
+  - [x] Modeling
   - [ ] See deliveries
   - [ ] New delivery
   - [ ] Change delivery status

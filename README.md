@@ -46,7 +46,7 @@ Projects just for understanding below topics.
 
 ## Auth
 
-- [ ] 인증 방식
+- [x] 인증 방식
   - [x] JWT를 이용한 구현
 
 ## CI / CD

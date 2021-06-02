@@ -7,7 +7,7 @@ const editItem = require('./editItem');
 
 const router = express.Router();
 
-router.post('/add', addItem);
+router.post('/', addItem);
 router.get('/pagination', getItemCount);
 router.get('/:id', getOneItem);
 router.delete('/:id', deleteItem);

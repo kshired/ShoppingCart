@@ -3,6 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const usersRouter = require('./routes/users');
 const itemsRouter = require('./routes/items');
+const cartRouter = require('./routes/cartItem');
 
 const server = express();
 const port = process.env.PORT;
@@ -18,6 +19,7 @@ if (process.env.NODE_ENV === 'development') {
 
 server.use('/users', usersRouter);
 server.use('/items', itemsRouter);
+server.use('/cart', cartRouter);
 server.use((_, res) => {
   res.status(404).send({
     ok: false,

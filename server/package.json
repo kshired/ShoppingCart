@@ -9,16 +9,15 @@
   "private": false,
   "dependencies": {
     "@prisma/client": "^2.24.0",
-    "@prisma/studio": "^0.397.0",
     "bcrypt": "^5.0.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "global": "^4.4.0",
     "jsonwebtoken": "^8.5.1",
-    "morgan": "^1.10.0",
-    "mysql2": "^2.2.5"
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "@prisma/studio": "^0.397.0",
     "nodemon": "^2.0.7",
     "prisma": "^2.24.0"
   },

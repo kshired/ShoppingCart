@@ -2,9 +2,6 @@
 
 Projects just for understanding below topics.
 
-1. Difference between session-cookie and jwt
-2. Git-flow
-
 ## To Do
 
 ### API
@@ -28,11 +25,11 @@ Projects just for understanding below topics.
   - [x] Delete Item
   - [x] Edit Item
 
-- [ ] Orders
+- [x] Orders
   - [x] Modeling
-  - [ ] See Orders
-  - [ ] New Order
-  - [ ] Cancel Order
+  - [x] See Orders
+  - [x] New Order
+  - [x] Cancel Order
 
 - [x] Cart
   - [x] Modeling
@@ -50,7 +47,6 @@ Projects just for understanding below topics.
 ## Auth
 
 - [ ] 인증 방식
-  - [ ] session-cookie를 이용한 구현
   - [x] JWT를 이용한 구현
 
 ## CI / CD

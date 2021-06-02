@@ -27,6 +27,7 @@ model CartItem {
   user_id Int
   item    Items @relation(fields: [item_id], references: [id])
   item_id Int
+  price   Int   @default(0)
 
   @@id([user_id, item_id])
 }
@@ -46,6 +47,8 @@ model OrderItem {
   order_id Int
   item     Items  @relation(fields: [item_id], references: [id])
   item_id  Int
+  count    Int
+  price    Int
 }
 
 model Orders {

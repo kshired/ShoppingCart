@@ -18,6 +18,7 @@ const addCartItem = async (req, res) => {
       await client.cartItem.create({
         data: {
           count,
+          price: count * item.price,
           user: {
             connect: {
               id: user_id,

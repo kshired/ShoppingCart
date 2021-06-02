@@ -1,7 +1,7 @@
 const client = require('../../client');
 
 const getItemList = async (req, res) => {
-  let { page } = req.query;
+  const { page } = req.query;
 
   if (isNaN(page)) {
     res.status(400).send({

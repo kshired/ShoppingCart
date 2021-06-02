@@ -5,6 +5,7 @@ const usersRouter = require('./routes/users');
 const itemsRouter = require('./routes/items');
 const cartRouter = require('./routes/cartItem');
 const deliveryRouter = require('./routes/delivery');
+const ordersRouter = require('./routes/orders');
 
 const server = express();
 const port = process.env.PORT;
@@ -22,6 +23,7 @@ server.use('/users', usersRouter);
 server.use('/items', itemsRouter);
 server.use('/cart', cartRouter);
 server.use('/delivery', deliveryRouter);
+server.use('/orders', ordersRouter);
 
 server.use((_, res) => {
   res.status(404).send({

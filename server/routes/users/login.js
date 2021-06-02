@@ -1,19 +1,20 @@
 const bcrypt = require('bcrypt');
-const { Users } = require('../../models');
+const client = require('../../client');
 const jwt = require('../../auth/auth-jwt');
 
 const login = async (req, res) => {
-  const { name, password } = req.body;
-  const user = await Users.findOne({
+  const { username, password } = req.body;
+
+  const user = await client.users.findFirst({
     where: {
-      name,
+      username,
     },
   });
 
   if (user) {
     const chk = await bcrypt.compare(password, user.password);
     if (chk) {
-      const token = await jwt.sign(user);
+      const token = jwt.sign(user);
       res.status(200).send({
         token,
       });

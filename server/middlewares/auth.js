@@ -5,7 +5,7 @@ const authJWT = (req, res, next) => {
     const token = req.headers.authorization.split('Bearer ')[1];
     const result = verify(token);
     if (result.split(' ')[0] === 'verified') {
-      req.name = result.split(' ')[1];
+      req.id = result.split(' ')[1];
       next();
     } else {
       res.status(401).send({

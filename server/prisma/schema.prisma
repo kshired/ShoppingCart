@@ -1,0 +1,68 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Users {
+  id         Int        @id @default(autoincrement())
+  username   String     @db.VarChar(255)
+  city       String     @db.VarChar(50)
+  street     String     @db.VarChar(50)
+  zipcode    String     @db.VarChar(10)
+  password   String     @db.VarChar(255)
+  orders     Orders[]
+  cart_items CartItem[]
+}
+
+model CartItem {
+  count   Int
+  user    Users @relation(fields: [user_id], references: [id])
+  user_id Int
+  item    Items @relation(fields: [item_id], references: [id])
+  item_id Int
+
+  @@id([user_id, item_id])
+}
+
+model Items {
+  id          Int         @id @default(autoincrement())
+  order_date  DateTime    @default(now())
+  status      Boolean     @default(false)
+  cart_items  CartItem[]
+  order_items OrderItem[]
+}
+
+model OrderItem {
+  id       Int    @id @default(autoincrement())
+  order    Orders @relation(fields: [order_id], references: [id])
+  order_id Int
+  item     Items  @relation(fields: [item_id], references: [id])
+  item_id  Int
+}
+
+model Orders {
+  id          Int         @id @default(autoincrement())
+  order_date  DateTime    @default(now())
+  status      Boolean     @default(false)
+  user        Users       @relation(fields: [user_id], references: [id])
+  user_id     Int
+  delivery    Delivery    @relation(fields: [delivery_id], references: [id])
+  delivery_id Int
+  order_items OrderItem[]
+}
+
+model Delivery {
+  id      Int      @id @default(autoincrement())
+  status  Boolean  @default(false)
+  city    String   @db.VarChar(50)
+  street  String   @db.VarChar(50)
+  zipcode String   @db.VarChar(10)
+  order   Orders[]
+}

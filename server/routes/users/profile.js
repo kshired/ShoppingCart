@@ -1,20 +1,19 @@
-const { Users } = require('../../models');
-
+const client = require('../../client');
+const bcrypt = require('bcrypt');
 const seeProfile = async (req, res) => {
-  const user = await Users.findOne({
+  const { id } = req;
+  const user = await client.users.findFirst({
     where: {
-      name: req.name,
+      id: parseInt(id),
     },
   });
   if (user) {
-    const { name, city, zipcode, street } = user;
+    const { username, city, zipcode, street } = user;
     res.status(200).send({
-      user: {
-        name,
-        city,
-        street,
-        zipcode,
-      },
+      username,
+      city,
+      zipcode,
+      street,
     });
     return;
   }
@@ -24,37 +23,35 @@ const seeProfile = async (req, res) => {
 };
 
 const modifyProfile = async (req, res) => {
-  const user = await Users.findOne({
+  const { id } = req;
+  const { city, zipcode, street, password } = req.body;
+  let newPassword = null;
+  if (password) {
+    newPassword = await bcrypt.hash(password, 10);
+  }
+
+  const updatedUser = await client.users.update({
     where: {
-      name: req.name,
+      id: parseInt(id),
+    },
+    data: {
+      city,
+      zipcode,
+      street,
+      ...(newPassword && { password: newPassword }),
     },
   });
 
-  if (user) {
-    try {
-      await Users.update(
-        {
-          ...req.body,
-        },
-        {
-          where: {
-            name: req.name,
-          },
-        }
-      );
-      res.status(200).send({
-        message: 'ok',
-      });
-      return;
-    } catch (err) {
-      res.status(401).send({
-        message: err.erros[0].message,
-      });
-    }
+  if (updatedUser.id) {
+    res.status(200).send({
+      ok: true,
+    });
+  } else {
+    res.status(401).send({
+      ok: false,
+      error: 'Could not update profile',
+    });
   }
-  res.status(401).send({
-    message: 'user not exist',
-  });
 };
 
 module.exports = {

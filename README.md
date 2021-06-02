@@ -19,7 +19,7 @@ Projects just for understanding below topics.
   - [x] See Profile
   - [x] Modify Profile
 
-- [ ] Items
+- [ ] Item
   - [ ] Modeling
   - [ ] Add Item
   - [ ] Get Item Information

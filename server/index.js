@@ -1,12 +1,10 @@
 require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
-const sequelize = require('./models').sequelize;
 const usersRouter = require('./routes/users');
 
 const server = express();
 const port = process.env.PORT;
-sequelize.sync();
 
 server.use(express.urlencoded({ extended: false }));
 server.use(express.json());

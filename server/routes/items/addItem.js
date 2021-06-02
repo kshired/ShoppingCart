@@ -3,7 +3,7 @@ const client = require('../../client');
 const addItem = async (req, res) => {
   const { name, price, stock_quantity } = req.body;
   try {
-    await client.items.create({
+    const item = await client.items.create({
       data: {
         name,
         price,
@@ -12,9 +12,9 @@ const addItem = async (req, res) => {
     });
     res.status(200).send({
       ok: true,
-      name,
-      price,
-      stock_quantity,
+      data: {
+        ...item,
+      },
     });
   } catch (err) {
     res.status(404).send({

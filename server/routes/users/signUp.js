@@ -19,7 +19,9 @@ const signUp = async (req, res) => {
 
     res.status(200).send({
       ok: true,
-      token,
+      data: {
+        token,
+      },
     });
   } catch (err) {
     res.status(409).send({

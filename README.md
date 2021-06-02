@@ -19,12 +19,12 @@ Projects just for understanding below topics.
   - [x] See Profile
   - [x] Edit Profile
 
-- [ ] Item
+- [x] Item
   - [x] Modeling
   - [x] Add Item
   - [x] Get Item Information
-  - [ ] Get Items List
-    - [ ] Pagination
+  - [x] Get Items List
+    - [x] Pagination
   - [x] Delete Item
   - [x] Edit Item
 
@@ -59,8 +59,6 @@ Projects just for understanding below topics.
 
 ## New Feature
 - [ ] 실시간 상담 기능 ( socket )
-- [ ] 
-
+  
 ### Front
-
 - 기능만 가능하게 아주 간단히 구현하자

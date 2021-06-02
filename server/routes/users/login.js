@@ -17,7 +17,9 @@ const login = async (req, res) => {
       const token = jwt.sign(user);
       res.status(200).send({
         ok: true,
-        token,
+        data: {
+          token,
+        },
       });
       return;
     } else {

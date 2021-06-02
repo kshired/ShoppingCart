@@ -122,8 +122,9 @@ sql/
 config/
 seeders/
 migrations/
+seeder.js
 
 # vscode settings
 .vscode/
 .DS_Store
-.prisma/migrations/
+.prisma/migrations

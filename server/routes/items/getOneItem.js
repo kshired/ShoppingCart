@@ -11,7 +11,9 @@ const getOneItem = async (req, res) => {
   if (item) {
     res.status(200).send({
       ok: true,
-      ...item,
+      data: {
+        ...item,
+      },
     });
   } else {
     res.status(404).send({

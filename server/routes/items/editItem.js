@@ -1,7 +1,7 @@
 const client = require('../../client');
 
 const editItem = async (req, res) => {
-  const { id } = req,params;
+  const { id } = req.params;
   const { name, price, stock_quantity } = req.body;
 
   const updatedItem = await client.items.update({
@@ -11,7 +11,7 @@ const editItem = async (req, res) => {
     data: {
       name,
       price,
-      stock_quantity
+      stock_quantity,
     },
   });
 

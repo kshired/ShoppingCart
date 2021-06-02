@@ -1,6 +1,6 @@
 const client = require('../../client');
 
-const deleteItem = (req, res) => {
+const deleteItem = async (req, res) => {
   const { id } = req.params;
   try {
     await client.users.delete({

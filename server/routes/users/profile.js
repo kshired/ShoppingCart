@@ -11,10 +11,12 @@ const seeProfile = async (req, res) => {
     const { username, city, zipcode, street } = user;
     res.status(200).send({
       ok: true,
-      username,
-      city,
-      zipcode,
-      street,
+      data: {
+        username,
+        city,
+        zipcode,
+        street,
+      },
     });
     return;
   }

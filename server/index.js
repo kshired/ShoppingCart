@@ -18,6 +18,12 @@ if (process.env.NODE_ENV === 'development') {
 
 server.use('/users', usersRouter);
 server.use('/items', itemsRouter);
+server.use((_, res) => {
+  res.status(404).send({
+    ok: false,
+    message: 'Unable to find the requested resource.',
+  });
+});
 
 server.listen(port, () => {
   console.log(`server is listening at http://localhost:${port}`);

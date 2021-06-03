@@ -128,3 +128,4 @@ seeder.js
 .vscode/
 **/.DS_Store
 .prisma/migrations
+db

@@ -24,6 +24,8 @@
     "prisma": "^2.24.0"
   },
   "scripts": {
-    "dev": "nodemon --exec node index.js"
+    "dev": "nodemon --exec node index.js",
+    "migrate": "yarn prisma migrate dev --name init",
+    "start": "node index.js"
   }
 }

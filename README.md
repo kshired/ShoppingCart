@@ -49,9 +49,17 @@ Projects just for understanding below topics.
 - [x] 인증 방식
   - [x] JWT를 이용한 구현
 
+## Test
+- [ ] 테스트 라이브러리 선택
+- [ ] Users Tests
+- [ ] Item Test
+- [ ] Orders Test
+- [ ] Cart Test
+- [ ] Delivery Test
+
 ## CI / CD
 - [ ] Jenkins를 쓸지 Github Action을 사용 할 지 정하기
-- [ ] Docker 파일 구성
+- [x] Docker 파일 구성
 
 ## New Feature
 - [ ] 실시간 상담 기능 ( socket )

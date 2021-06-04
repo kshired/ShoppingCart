@@ -10,6 +10,11 @@ generator client {
   provider = "prisma-client-js"
 }
 
+enum Role {
+  USER
+  ADMIN
+}
+
 model Users {
   id         Int        @id @default(autoincrement())
   username   String     @unique @db.VarChar(255)
@@ -17,8 +22,11 @@ model Users {
   street     String     @db.VarChar(50)
   zipcode    String     @db.VarChar(10)
   password   String     @db.VarChar(255)
+  role       Role       @default(USER)
   orders     Orders[]
   cart_items CartItem[]
+  rooms      Room[]
+  messages   Message[]
 }
 
 model CartItem {
@@ -69,4 +77,18 @@ model Delivery {
   street  String   @db.VarChar(50)
   zipcode String   @db.VarChar(10)
   order   Orders[]
+}
+
+model Room {
+  id       Int       @id @default(autoincrement())
+  users    Users[]
+  messages Message[]
+}
+
+model Message {
+  id      Int   @id @default(autoincrement())
+  room    Room  @relation(fields: [room_id], references: [id])
+  room_id Int
+  user    Users @relation(fields: [user_id], references: [id])
+  user_id Int
 }

@@ -5,6 +5,7 @@ const cors = require('cors');
 const http = require('http');
 const socketIO = require('socket.io');
 const router = require('./routes');
+const setSocket = require('./chat/socket');
 
 const server = express();
 const compoundedServer = http.createServer(server);
@@ -32,22 +33,12 @@ server.use((_, res) => {
 
 const io = socketIO(compoundedServer, {
   cors: {
-    origin: ['http://localhost:3000'],
+    origin: 'http://localhost:3000',
     methods: ['GET', 'POST'],
   },
 });
 
-io.on('connection', (socket) => {
-  console.log('User connected', socket.id);
-  socket.on('send message', ({ name, message }) => {
-    const msg = name + ' : ' + message;
-    console.log(msg);
-    io.emit('receive message', { name, message });
-  });
-  socket.on('disconnect', () => {
-    console.log('User disconnected');
-  });
-});
+setSocket(io);
 
 compoundedServer.listen(port, () => {
   console.log(`server is listening at http://localhost:${port}`);

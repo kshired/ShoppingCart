@@ -1,0 +1,72 @@
+.chat-form {
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.chat-form > .chat-inputs {
+  flex: 8;
+  display: flex;
+  height: 100%;
+}
+.chat-inputs > input {
+  flex: 1;
+  height: 100%;
+  border: 1px solid rgb(150, 150, 150);
+  font-size: 18px;
+  outline: none;
+  transition: border 0.2s;
+  border-radius: 5px;
+  margin: 0 5px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+.chat-inputs > input:focus {
+  border: 1px solid rgb(240, 119, 59);
+}
+.chat-form > button {
+  flex: 2;
+  margin-left: 10px;
+  border: 0px;
+  background: rgb(240, 119, 59);
+  width: 100px;
+  height: 100%;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+  transition: background-color 0.2s;
+}
+.chat-form > button:active {
+  background-color: rgb(280, 119, 59);
+}
+
+.chat-list {
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.message {
+  min-height: 40px;
+  margin: 5px 0;
+}
+.message > .username {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+}
+.message > .message-text {
+  margin: 0;
+  font-size: 18px;
+  color: white;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: rgb(240, 119, 59);
+  min-height: 40px;
+  border-radius: 10px;
+}

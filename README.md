@@ -7,7 +7,8 @@ Projects just for understanding below topics.
 ### API
 
 - [x] API 설계 
-  - [API 설계 문서](https://www.notion.so/kshired/API-d3b3d27e83904bce92d18f17ec5fb7ab)
+  
+  [API 설계 문서](https://www.notion.so/kshired/API-d3b3d27e83904bce92d18f17ec5fb7ab)
 - [x] ERD 정의 
       ![erd](files/erd.png)
 

@@ -29,6 +29,7 @@ const addOrder = async (req, res) => {
             id: delivery_id,
           },
         },
+        status: true,
       },
     });
 

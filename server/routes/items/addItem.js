@@ -17,7 +17,7 @@ const addItem = async (req, res) => {
       },
     });
   } catch (err) {
-    res.status(404).send({
+    res.status(400).send({
       ok: false,
       message: err.message,
     });

@@ -18,9 +18,15 @@ const editItem = async (req, res) => {
   if (updatedItem.id) {
     res.status(200).send({
       ok: true,
+      data: {
+        id: updatedItem.id,
+        name: updatedItem.name,
+        price: updatedItem.price,
+        stock_quantity: updatedItem.stock_quantity,
+      },
     });
   } else {
-    res.status(401).send({
+    res.status(404).send({
       ok: false,
       error: 'Could not update item',
     });

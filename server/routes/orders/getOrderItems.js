@@ -10,7 +10,7 @@ const getOrderItems = async (req, res) => {
       },
     });
     if (orderItems.length === 0) {
-      res.status(200).send({
+      res.status(404).send({
         ok: false,
         message: 'This order is not exist!',
       });

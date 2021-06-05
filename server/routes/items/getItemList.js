@@ -12,8 +12,8 @@ const getItemList = async (req, res) => {
   }
 
   const items = await client.items.findMany({
-    skip: (parseInt(page) - 1) * 20,
-    take: 20,
+    skip: (parseInt(page) - 1) * 15,
+    take: 15,
   });
 
   if (items.length) {
@@ -33,7 +33,7 @@ const getItemCount = async (_, res) => {
   const count = await client.items.count();
   res.status(200).send({
     ok: true,
-    page: Math.ceil(count / 20),
+    page: Math.ceil(count / 15),
   });
 };
 

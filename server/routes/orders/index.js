@@ -8,7 +8,7 @@ const cancelOrder = require('./cancelOrder');
 const router = express.Router();
 
 router.post('/', authJwt, addOrder);
-router.get('/pagination', authJwt, getPages);
+router.get('/page', authJwt, getPages);
 router.get('/', authJwt, getOrdersList);
 router.get('/:id', authJwt, getOrderItems);
 router.delete('/:id', authJwt, cancelOrder);

@@ -6,6 +6,7 @@ module.exports = {
   sign: (user) => {
     const payload = {
       id: user.id,
+      role: user.role,
     };
 
     return jwt.sign(payload, secret, {
@@ -18,15 +19,16 @@ module.exports = {
     let decoded = null;
     try {
       decoded = jwt.verify(token, secret);
-      return `verified ${decoded.id}`;
+      return {
+        ok: true,
+        id: decoded.id,
+        role: decoded.role,
+      };
     } catch (err) {
-      if (err.message === 'jwt expired') {
-        return 'expired token';
-      } else if (err.message === 'invalid token') {
-        return 'invalid token';
-      } else {
-        return 'invalid token';
-      }
+      return {
+        ok: false,
+        message: err.message,
+      };
     }
   },
 };

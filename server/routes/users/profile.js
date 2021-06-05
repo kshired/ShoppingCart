@@ -47,8 +47,15 @@ const modifyProfile = async (req, res) => {
   });
 
   if (updatedUser.id) {
+    const { username, city, zipcode, street } = updatedUser;
     res.status(200).send({
       ok: true,
+      data: {
+        username,
+        city,
+        zipcode,
+        street,
+      },
     });
   } else {
     res.status(401).send({

@@ -4,7 +4,8 @@ const jwt = require('../../auth/auth-jwt');
 
 const login = async (req, res) => {
   const { username, password } = req.body;
-
+  // to do : check username, password are not undefined
+  // if undefined return 400
   const user = await client.users.findFirst({
     where: {
       username,

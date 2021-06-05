@@ -22,7 +22,6 @@ services:
     volumes:
       - ./db/mysql/data:/var/lib/mysql
       - ./db/mysql/init:/docker-entrypoint-initdb.d
-    platform: linux/amd64
   server:
     networks:
       - app
@@ -36,4 +35,3 @@ services:
       - /usr/src/app/node_modules
     depends_on:
       - mysqldb
-    platform: linux/amd64

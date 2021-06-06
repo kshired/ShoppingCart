@@ -45,6 +45,7 @@ model Items {
   name           String      @db.VarChar(100)
   price          Int
   stock_quantity Int
+  picture        String
   cart_items     CartItem[]
   order_items    OrderItem[]
 }

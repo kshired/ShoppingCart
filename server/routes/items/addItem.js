@@ -1,12 +1,13 @@
 const client = require('../../client');
 
 const addItem = async (req, res) => {
-  const { name, price, stock_quantity } = req.body;
+  const { name, price, stock_quantity, picture } = req.body;
   try {
     const item = await client.items.create({
       data: {
         name,
         price,
+        picture,
         stock_quantity,
       },
     });

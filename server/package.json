@@ -9,6 +9,7 @@
   "private": false,
   "dependencies": {
     "@prisma/client": "^2.24.0",
+    "aws-sdk": "^2.922.0",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
@@ -17,6 +18,8 @@
     "http": "^0.0.1-security",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "multer-s3": "^2.9.0",
     "path": "^0.12.7",
     "redis": "^3.1.2",
     "socket.io": "^4.1.2"

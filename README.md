@@ -68,8 +68,9 @@ Projects just for understanding below topics.
 
 ## New Feature
 - [ ] 실시간 상담 기능 ( socket )
-- [ ] 로드밸런싱
+- [x] S3 Upload
 - [ ] CDN
+- [ ] 로드밸런싱
 - [x] Redis Caching
   
 ### Front

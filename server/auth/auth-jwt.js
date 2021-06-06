@@ -43,8 +43,7 @@ module.exports = {
     const getAsync = promisify(redisClient.get).bind(redisClient);
     try {
       const data = await getAsync(username);
-      console.log(data.split('"')[1] === token);
-      if (token === data.split('"')[1]) {
+      if (token === data) {
         return {
           ok: true,
         };
@@ -54,7 +53,6 @@ module.exports = {
         };
       }
     } catch (err) {
-      console.log(err);
       return {
         ok: false,
       };

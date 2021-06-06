@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt');
 const client = require('../../client');
 const jwt = require('../../auth/auth-jwt');
-const { set } = require('../../utils/cache');
+const { redisClient } = require('../../utils/cache');
 
 const login = async (req, res) => {
   const { username, password } = req.body;
@@ -19,7 +19,7 @@ const login = async (req, res) => {
       const accessToken = jwt.sign(user);
       const refreshToken = jwt.refresh();
 
-      set(username, refreshToken);
+      redisClient.set(username, refreshToken);
 
       res.status(200).send({
         ok: true,

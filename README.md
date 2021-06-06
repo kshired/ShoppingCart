@@ -68,9 +68,10 @@ Projects just for understanding below topics.
 
 ## New Feature
 - [ ] 실시간 상담 기능 ( socket )
-- [x] S3 Upload
 - [ ] CDN
-- [ ] 로드밸런싱
+- [x] S3 Upload
+- [x] 로드밸런싱
+  - [x] [pm2](files/pm2.md)
 - [x] Redis Caching
   
 ### Front

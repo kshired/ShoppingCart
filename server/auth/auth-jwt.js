@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
-
+const { redisClient } = require('../utils/cache');
+const { promisify } = require('util');
 const secret = process.env.SECRET;
 
 module.exports = {
@@ -11,7 +12,7 @@ module.exports = {
 
     return jwt.sign(payload, secret, {
       algorithm: 'HS256',
-      expiresIn: '30m',
+      expiresIn: '1h',
       issuer: 'kshired',
     });
   },
@@ -28,6 +29,34 @@ module.exports = {
       return {
         ok: false,
         message: err.message,
+      };
+    }
+  },
+  refresh: () => {
+    return jwt.sign({}, secret, {
+      algorithm: 'HS256',
+      expiresIn: '14d',
+      issuer: 'kshired',
+    });
+  },
+  refreshVerify: async (token, username) => {
+    const getAsync = promisify(redisClient.get).bind(redisClient);
+    try {
+      const data = await getAsync(username);
+      console.log(data.split('"')[1] === token);
+      if (token === data.split('"')[1]) {
+        return {
+          ok: true,
+        };
+      } else {
+        return {
+          ok: false,
+        };
+      }
+    } catch (err) {
+      console.log(err);
+      return {
+        ok: false,
       };
     }
   },

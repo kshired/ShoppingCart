@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt');
 const client = require('../../client');
 const jwt = require('../../auth/auth-jwt');
+const { set } = require('../../utils/cache');
 
 const login = async (req, res) => {
   const { username, password } = req.body;
@@ -15,11 +16,16 @@ const login = async (req, res) => {
   if (user) {
     const chk = await bcrypt.compare(password, user.password);
     if (chk) {
-      const token = jwt.sign(user);
+      const accessToken = jwt.sign(user);
+      const refreshToken = jwt.refresh();
+
+      set(username, refreshToken);
+
       res.status(200).send({
         ok: true,
         data: {
-          token,
+          accessToken,
+          refreshToken,
         },
       });
       return;

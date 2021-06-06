@@ -50,7 +50,9 @@ Projects just for understanding below topics.
 ## Auth
 
 - [x] 인증 방식
-  - [x] JWT를 이용한 구현
+  - [ ] JWT를 이용한 구현
+    - [x] Access Token
+    - [ ] Refresh Token
 
 ## Test
 - [ ] 테스트 라이브러리 선택

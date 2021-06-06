@@ -1,5 +1,5 @@
 const express = require('express');
-const authJwt = require('../../middlewares/auth');
+const authJwt = require('../../utils/auth');
 const addDelivery = require('./addDelivery');
 const getDelivery = require('./getDelivery');
 const changeDeliveryStatus = require('./changeDeliveryStatus');

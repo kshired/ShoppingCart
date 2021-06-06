@@ -1,5 +1,5 @@
 const express = require('express');
-const authJwt = require('../../middlewares/auth');
+const authJwt = require('../../utils/auth');
 const addOrder = require('./addOrder');
 const { getOrdersList, getPages } = require('./getOrders');
 const getOrderItems = require('./getOrderItems');

@@ -1,5 +1,5 @@
 const express = require('express');
-const authJwt = require('../../middlewares/auth');
+const authJwt = require('../../utils/auth');
 const addCartItem = require('./addCartItem');
 const deleteCartItem = require('./deleteCartItem');
 const getCartItems = require('./getCartItems');

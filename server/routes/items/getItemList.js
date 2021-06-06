@@ -1,4 +1,5 @@
 const client = require('../../client');
+const { set } = require('../../utils/cache');
 
 const getItemList = async (req, res) => {
   const { page } = req.query;
@@ -17,6 +18,7 @@ const getItemList = async (req, res) => {
   });
 
   if (items.length) {
+    set(req.originalUrl, items);
     res.status(200).send({
       ok: true,
       data: items,

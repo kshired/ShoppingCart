@@ -2,7 +2,7 @@ const express = require('express');
 const signUp = require('./signUp');
 const login = require('./login');
 const { seeProfile, modifyProfile } = require('./profile');
-const authJwt = require('../../middlewares/auth');
+const authJwt = require('../../utils/auth');
 
 const router = express.Router();
 

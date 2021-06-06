@@ -66,6 +66,9 @@ Projects just for understanding below topics.
 
 ## New Feature
 - [ ] 실시간 상담 기능 ( socket )
+- [ ] 로드밸런싱
+- [ ] CDN
+- [x] Redis Caching
   
 ### Front
 - 기능만 가능하게 아주 간단히 구현하자

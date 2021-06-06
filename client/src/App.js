@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-// import routes from './routes';
+import Chat from './screens/Chat';
 import Home from './screens/Home';
 
 function App() {
@@ -7,6 +7,9 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/" component={Home} />
+      </Switch>
+      <Switch>
+        <Route exact path="/chat" component={Chat} />
       </Switch>
     </Router>
   );

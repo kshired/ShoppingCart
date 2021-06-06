@@ -70,9 +70,7 @@ web_modules/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
-.env.test
-.env.production
+.env*
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -126,6 +124,17 @@ seeder.js
 
 # vscode settings
 .vscode/
-**/.DS_Store
+.DS_Store
 .prisma/migrations
 db
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+./client/coverage
+
+# production
+./client//build

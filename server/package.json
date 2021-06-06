@@ -17,6 +17,7 @@
     "http": "^0.0.1-security",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
+    "path": "^0.12.7",
     "socket.io": "^4.1.2"
   },
   "devDependencies": {
@@ -26,8 +27,8 @@
     "prisma": "^2.24.0"
   },
   "scripts": {
-    "dev": "nodemon --exec node index.js",
-    "migrate": "yarn prisma migrate dev --name init",
-    "start": "node index.js"
+    "dev": "nodemon --exec NODE_ENV=development node index.js",
+    "start": "NODE_ENV=production node index.js",
+    "migrate": "yarn prisma migrate dev --name init"
   }
 }

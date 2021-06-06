@@ -10,9 +10,9 @@ const router = express.Router();
 
 router.post('/', authJWT, addItem);
 router.get('/page', getItemCount);
+router.get('/', getItemList);
 router.get('/:id', getOneItem);
 router.delete('/:id', authJWT, deleteItem);
 router.patch('/:id', authJWT, editItem);
-router.get('/', getItemList);
 
 module.exports = router;

@@ -1,4 +1,12 @@
-require('dotenv').config();
+const path = require('path');
+require('dotenv').config({
+  path: path.resolve(
+    process.cwd(),
+    process.env.NODE_ENV == 'production'
+      ? '.env.production'
+      : '.env.development'
+  ),
+});
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
@@ -17,7 +25,6 @@ server.use(cors());
 
 if (process.env.NODE_ENV === 'development') {
   server.use(morgan('dev'));
-  process.env.DATABASE_URL = process.env.DATABASE_URL_DEV;
 } else {
   server.use(morgan('tiny'));
 }

@@ -73,6 +73,7 @@ Projects just for understanding below topics.
 - [x] 로드밸런싱
   - [x] [pm2](files/pm2.md)
 - [x] Redis Caching
+- [ ] Migration To TypeScript
   
 ### Front
 - 기능만 가능하게 아주 간단히 구현하자

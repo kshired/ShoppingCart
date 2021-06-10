@@ -1,6 +1,7 @@
-const AWS = require('aws-sdk');
-const multer = require('multer');
-const multerS3 = require('multer-s3');
+import * as AWS from 'aws-sdk';
+import * as multer from 'multer';
+import * as multerS3 from 'multer-s3';
+import { Request, Response } from 'express';
 
 AWS.config.update({
   credentials: {
@@ -22,7 +23,7 @@ const uploadToS3 = multer({
   }),
 });
 
-const uploadImage = async (req, res) => {
+const uploadImage = async (req: Request, res: Response) => {
   const img = req.file.location;
   if (img === undefined) {
     res.status(400).send({
@@ -39,7 +40,4 @@ const uploadImage = async (req, res) => {
   });
 };
 
-module.exports = {
-  uploadToS3,
-  uploadImage,
-};
+export { uploadToS3, uploadImage };

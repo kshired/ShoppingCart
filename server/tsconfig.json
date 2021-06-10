@@ -7,8 +7,9 @@
     "outDir": "./build",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "typeRoots": ["./@types", "./node_modules/@types"]
   },
-  "typeRoots": ["node_modules/@types"],
+  "include": ["./*.ts"],
   "exclude": ["node_modules", "prisma"]
 }

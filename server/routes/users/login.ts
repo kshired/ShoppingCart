@@ -1,12 +1,12 @@
-const bcrypt = require('bcrypt');
-const client = require('../../client');
-const jwt = require('../../auth/auth-jwt');
-const { redisClient } = require('../../utils/cache');
+import { Request, Response } from 'express';
+import * as bcrypt from 'bcrypt';
+import client from '../../client';
+import { redisClient } from '../../utils/cache';
 
-const login = async (req, res) => {
-  const { username, password } = req.body;
-  // to do : check username, password are not undefined
-  // if undefined return 400
+const login = async (req: Request, res: Response) => {
+  const { username, password }: { username: string; password: string } =
+    req.body;
+
   const user = await client.users.findFirst({
     where: {
       username,
@@ -14,11 +14,10 @@ const login = async (req, res) => {
   });
 
   if (user) {
-    const chk = await bcrypt.compare(password, user.password);
+    const chk: boolean = await bcrypt.compare(password, user.password);
     if (chk) {
-      const accessToken = jwt.sign(user);
-      const refreshToken = jwt.refresh();
-
+      const accessToken = 'token';
+      const refreshToken = 'refresh';
       redisClient.set(username, refreshToken);
 
       res.status(200).send({
@@ -28,6 +27,7 @@ const login = async (req, res) => {
           refreshToken,
         },
       });
+
       return;
     } else {
       res.status(401).send({
@@ -43,4 +43,4 @@ const login = async (req, res) => {
   });
 };
 
-module.exports = login;
+export default login;

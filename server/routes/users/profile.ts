@@ -1,6 +1,8 @@
-const client = require('../../client');
-const bcrypt = require('bcrypt');
-const seeProfile = async (req, res) => {
+import client from '../../client';
+import * as bcrypt from 'bcrypt';
+import { Request, Response } from 'express';
+
+const seeProfile = async (req: Request, res: Response) => {
   const { id } = req;
   const user = await client.users.findFirst({
     where: {
@@ -26,10 +28,10 @@ const seeProfile = async (req, res) => {
   });
 };
 
-const modifyProfile = async (req, res) => {
+const modifyProfile = async (req: Request, res: Response) => {
   const { id } = req;
   const { city, zipcode, street, password } = req.body;
-  let newPassword = null;
+  let newPassword: string = null;
   if (password) {
     newPassword = await bcrypt.hash(password, 10);
   }
@@ -65,7 +67,4 @@ const modifyProfile = async (req, res) => {
   }
 };
 
-module.exports = {
-  seeProfile,
-  modifyProfile,
-};
+export { seeProfile, modifyProfile };

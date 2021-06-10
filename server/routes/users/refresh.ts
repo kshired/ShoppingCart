@@ -1,27 +1,30 @@
-const client = require('../../client');
-const { sign, verify, refreshVerify } = require('../../auth/auth-jwt');
-const jwt = require('jsonwebtoken');
+import client from '../../client';
+import auth from '../../auth/auth-jwt';
+import * as jwt from 'jsonwebtoken';
+import { Request, Response } from 'express';
 
-const refresh = async (req, res) => {
-  // check access token and refresh token exist
+const refresh = async (req: Request, res: Response) => {
   if (req.headers.authorization && req.headers.refresh) {
     const authToken = req.headers.authorization.split('Bearer ')[1];
-    const refreshToken = req.headers.refresh;
+    const originalRefreshToken = req.headers.refresh;
 
-    // access token verify
-    const authResult = verify(authToken);
+    let refreshToken = null;
+    if (typeof originalRefreshToken === 'object') {
+      refreshToken = originalRefreshToken.join('');
+    } else {
+      refreshToken = originalRefreshToken;
+    }
 
-    // access token decoding
-    const decoded = jwt.decode(authToken);
+    const authResult = auth.verify(authToken);
+    const decoded: any = jwt.decode(authToken);
 
     if (decoded === null) {
       res.status(401).send({
         ok: false,
-        message: 'No authorized!',
+        message: 'Not authorized',
       });
     }
 
-    // refreshToken verify
     let user = null;
     try {
       user = await client.users.findFirst({
@@ -36,7 +39,7 @@ const refresh = async (req, res) => {
       });
     }
 
-    const refreshResult = refreshVerify(refreshToken, user.username);
+    const refreshResult = await auth.refreshVerify(refreshToken, user.username);
 
     if (authResult.ok === false && authResult.message === 'jwt expired') {
       // 1. accessToken expired && refreshToken expired => make user login
@@ -47,7 +50,7 @@ const refresh = async (req, res) => {
         });
       } else {
         // 2. accessToken expired && refreshToken valid => make new accessToken
-        const newAccessToken = sign(user);
+        const newAccessToken = auth.sign(user);
 
         res.status(200).send({
           ok: true,
@@ -72,4 +75,4 @@ const refresh = async (req, res) => {
   }
 };
 
-module.exports = refresh;
+export default refresh;

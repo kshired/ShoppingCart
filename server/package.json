@@ -9,6 +9,7 @@
   "private": false,
   "dependencies": {
     "@prisma/client": "^2.24.0",
+    "@types/multer-s3": "^2.7.9",
     "@types/node": "^15.12.2",
     "aws-sdk": "^2.922.0",
     "bcrypt": "^5.0.1",
@@ -29,6 +30,11 @@
   },
   "devDependencies": {
     "@prisma/studio": "^0.397.0",
+    "@types/bcrypt": "^5.0.0",
+    "@types/express": "^4.17.12",
+    "@types/jsonwebtoken": "^8.5.1",
+    "@types/morgan": "^1.9.2",
+    "@types/redis": "^2.8.29",
     "axios": "^0.21.1",
     "nodemon": "^2.0.7",
     "prisma": "^2.24.0"
@@ -36,6 +42,7 @@
   "scripts": {
     "dev": "nodemon --exec NODE_ENV=development node index.js",
     "start": "NODE_ENV=production node index.js",
-    "migrate": "yarn prisma migrate dev --name init"
+    "migrate": "yarn prisma migrate dev --name init",
+    "ts-dev": "nodemon --exec NODE_ENV=development ts-node index.ts"
   }
 }

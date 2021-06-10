@@ -1,10 +1,10 @@
-const jwt = require('jsonwebtoken');
-const { redisClient } = require('../utils/cache');
-const { promisify } = require('util');
+import * as jwt from 'jsonwebtoken';
+import { redisClient } from '../utils/cache';
+import { promisify } from 'util';
 const secret = process.env.SECRET;
 
-module.exports = {
-  sign: (user) => {
+export default {
+  sign: (user: User): string => {
     const payload = {
       id: user.id,
       role: user.role,
@@ -16,7 +16,7 @@ module.exports = {
       issuer: 'kshired',
     });
   },
-  verify: (token) => {
+  verify: (token: string) => {
     let decoded = null;
     try {
       decoded = jwt.verify(token, secret);
@@ -39,7 +39,7 @@ module.exports = {
       issuer: 'kshired',
     });
   },
-  refreshVerify: async (token, username) => {
+  refreshVerify: async (token: string, username: string) => {
     const getAsync = promisify(redisClient.get).bind(redisClient);
     try {
       const data = await getAsync(username);

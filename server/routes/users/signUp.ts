@@ -1,12 +1,13 @@
-const bcrypt = require('bcrypt');
-const client = require('../../client');
-const jwt = require('../../auth/auth-jwt');
+import { Request, Response } from 'express';
+import * as bcrypt from 'bcrypt';
+import client from '../../client';
+import jwt from '../../auth/auth-jwt';
 
-const signUp = async (req, res) => {
+const signUp = async (req: Request, res: Response) => {
   const { username, city, zipcode, street, password } = req.body;
   const hashedPassword = await bcrypt.hash(password, 10);
   try {
-    const user = await client.users.create({
+    const user: User = await client.users.create({
       data: {
         username,
         city,
@@ -31,4 +32,4 @@ const signUp = async (req, res) => {
   }
 };
 
-module.exports = signUp;
+export default signUp;

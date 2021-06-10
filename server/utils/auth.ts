@@ -1,9 +1,10 @@
-const { verify } = require('../auth/auth-jwt');
+import auth from '../auth/auth-jwt';
+import { Request, Response, NextFunction } from 'express';
 
-const authJWT = (req, res, next) => {
+const authJWT = (req: Request, res: Response, next: NextFunction) => {
   if (req.headers.authorization) {
     const token = req.headers.authorization.split('Bearer ')[1];
-    const result = verify(token);
+    const result = auth.verify(token);
     if (result.ok) {
       req.id = result.id;
       req.role = result.role;
@@ -17,4 +18,4 @@ const authJWT = (req, res, next) => {
   }
 };
 
-module.exports = authJWT;
+export default authJWT;

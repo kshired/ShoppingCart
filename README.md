@@ -64,5 +64,3 @@ Projects just for understanding below topics.
 - [x] Redis Caching
 - [ ] NginX 설정
   
-### Front
-- 기능만 가능하게 아주 간단히 구현하자

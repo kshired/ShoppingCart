@@ -10,13 +10,9 @@ require('dotenv').config({
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
-const http = require('http');
-const socketIO = require('socket.io');
 const router = require('./routes');
-const setSocket = require('./chat/socket');
 
 const server = express();
-const compoundedServer = http.createServer(server);
 const port = process.env.PORT;
 
 server.use(express.urlencoded({ extended: false }));
@@ -38,15 +34,6 @@ server.use((_, res) => {
   });
 });
 
-const io = socketIO(compoundedServer, {
-  cors: {
-    origin: process.env.CLIENT_URL,
-    methods: ['GET', 'POST'],
-  },
-});
-
-setSocket(io);
-
-compoundedServer.listen(port, () => {
+server.listen(port, () => {
   console.log(`server is listening at http://localhost:${port}`);
 });

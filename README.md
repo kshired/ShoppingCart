@@ -62,5 +62,5 @@ Projects just for understanding below topics.
 - [x] 로드밸런싱
   - [x] [pm2](files/pm2.md)
 - [x] Redis Caching
-- [ ] NginX 설정
+- [x] [NginX 설정](files/nginx.md)
   

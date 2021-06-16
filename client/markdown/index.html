@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+
+    <!-- JS only -->
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="p-3 mb-3 border-bottom bg-light">
+      <div class="container">
+        <div
+          class="
+            d-flex
+            flex-wrap
+            align-items-center
+            justify-content-center justify-content-lg-start
+          "
+        >
+          <a
+            href="#"
+            class="
+              d-flex
+              align-items-center
+              mb-2 mb-lg-0
+              text-dark text-decoration-none
+            "
+          >
+            Shop
+          </a>
+
+          <ul
+            class="
+              nav
+              col-12 col-lg-auto
+              me-lg-auto
+              mb-2
+              justify-content-center
+              mb-md-0
+            "
+          >
+            <li>
+              <a href="#" class="nav-link px-2 disabled">상품 목록</a>
+            </li>
+            <li><a href="#" class="nav-link px-2 link-dark">장바구니</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark">주문조회</a></li>
+          </ul>
+
+          <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+            <input
+              type="search"
+              class="form-control"
+              placeholder="Search..."
+              aria-label="Search"
+            />
+          </form>
+
+          <div class="dropdown text-end">
+            <a
+              href="#"
+              class="d-block link-dark text-decoration-none dropdown-toggle"
+              id="dropdownUser1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img
+                src="https://github.com/kshired.png"
+                alt="mdo"
+                width="32"
+                height="32"
+                class="rounded-circle"
+              />
+            </a>
+            <ul
+              class="dropdown-menu text-small"
+              aria-labelledby="dropdownUser1"
+            >
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="album py-5 bg-white">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col">
+              <div class="card shadow-sm">
+                <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#55595c" />
+                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                    Thumbnail
+                  </text>
+                </svg>
+
+                <div class="card-body">
+                  <p class="card-text">상품 이름 / 재고</p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        자세히 보기
+                      </button>
+                    </div>
+                    <small class="text-muted">가격</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                >
+                  <title>Placeholder</title>
+                  <image src="https://github.com/kshired.png"></image>
+                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                    Thumbnail
+                  </text>
+                </svg>
+
+                <div class="card-body">
+                  <p class="card-text">상품 이름 / 재고</p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        자세히 보기
+                      </button>
+                    </div>
+                    <small class="text-muted">가격</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#55595c" />
+                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                    Thumbnail
+                  </text>
+                </svg>
+
+                <div class="card-body">
+                  <p class="card-text">상품 이름 / 재고</p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        자세히 보기
+                      </button>
+                    </div>
+                    <small class="text-muted">가격</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card shadow-sm">
+                <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#55595c" />
+                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                    Thumbnail
+                  </text>
+                </svg>
+
+                <div class="card-body">
+                  <p class="card-text">상품 이름 / 재고</p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        자세히 보기
+                      </button>
+                    </div>
+                    <small class="text-muted">가격</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#55595c" />
+                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                    Thumbnail
+                  </text>
+                </svg>
+
+                <div class="card-body">
+                  <p class="card-text">상품 이름 / 재고</p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        자세히 보기
+                      </button>
+                    </div>
+                    <small class="text-muted">가격</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#55595c" />
+                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                    Thumbnail
+                  </text>
+                </svg>
+
+                <div class="card-body">
+                  <p class="card-text">상품 이름 / 재고</p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        자세히 보기
+                      </button>
+                    </div>
+                    <small class="text-muted">가격</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card shadow-sm">
+                <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#55595c" />
+                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                    Thumbnail
+                  </text>
+                </svg>
+
+                <div class="card-body">
+                  <p class="card-text">상품 이름 / 재고</p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        자세히 보기
+                      </button>
+                    </div>
+                    <small class="text-muted">가격</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#55595c" />
+                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                    Thumbnail
+                  </text>
+                </svg>
+
+                <div class="card-body">
+                  <p class="card-text">상품 이름 / 재고</p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        자세히 보기
+                      </button>
+                    </div>
+                    <small class="text-muted">가격</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <image
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  aria-label="Placeholder: Thumbnail"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                  src="https://github.com/kshired.png"
+                ></image>
+                <div class="card-body">
+                  <p class="card-text">상품 이름 / 재고</p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        자세히 보기
+                      </button>
+                    </div>
+                    <small class="text-muted">가격</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">5</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </main>
+    <footer class="footer mt-auto py-3 bg-light">
+      <div class="container">
+        <span class="text-muted">Made by Kshired.</span><br />
+        <span class="text-muted">Using Bootstrap.</span>
+      </div>
+    </footer>
+  </body>
+</html>

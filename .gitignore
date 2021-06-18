@@ -121,6 +121,7 @@ config/
 seeders/
 migrations/
 seeder.js
+mock.js
 
 # vscode settings
 .vscode/

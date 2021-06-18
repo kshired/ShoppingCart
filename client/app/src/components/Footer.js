@@ -1,15 +1,40 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import Link from '@material-ui/core/Link';
 
-function Footer() {
+const useStyles = makeStyles((theme) => ({
+  footer: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(6),
+  },
+}));
+
+function Copyright() {
   return (
-    <footer className="footer mt-auto py-3 bg-light">
-      <div className="container">
-        <span className="text-muted">Made by Kshired.</span>
-        <br />
-        <span className="text-muted">Using Bootstrap.</span>
-      </div>
-    </footer>
+    <Typography variant="body2" color="textSecondary" align="center">
+      {'Copyright © '}
+      <Link color="inherit" href="https://material-ui.com/">
+        Your Website
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
   );
 }
 
-export default Footer;
+export default function Footer() {
+  const classes = useStyles();
+  return (
+    <footer className={classes.footer}>
+      <Typography
+        variant="subtitle1"
+        align="center"
+        color="textSecondary"
+        component="p"
+      >
+        Something here to give the footer a purpose!
+      </Typography>
+      <Copyright />
+    </footer>
+  );
+}

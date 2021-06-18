@@ -1,104 +1,194 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react';
+import { fade, makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import Typography from '@material-ui/core/Typography';
+import InputBase from '@material-ui/core/InputBase';
+import MenuItem from '@material-ui/core/MenuItem';
+import Menu from '@material-ui/core/Menu';
+import SearchIcon from '@material-ui/icons/Search';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import MoreIcon from '@material-ui/icons/MoreVert';
 
-function Header() {
-  return (
-    <header className="p-3 mb-3 border-bottom bg-light">
-      <div className="container">
-        <div
-          className="
-            d-flex
-            flex-wrap
-            align-items-center
-            justify-content-center justify-content-lg-start
-          "
+const useStyles = makeStyles((theme) => ({
+  grow: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    display: 'none',
+    [theme.breakpoints.up('sm')]: {
+      display: 'block',
+    },
+  },
+  search: {
+    position: 'relative',
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: fade(theme.palette.common.white, 0.15),
+    '&:hover': {
+      backgroundColor: fade(theme.palette.common.white, 0.25),
+    },
+    marginRight: theme.spacing(2),
+    marginLeft: 0,
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: theme.spacing(3),
+      width: 'auto',
+    },
+  },
+  searchIcon: {
+    padding: theme.spacing(0, 2),
+    height: '100%',
+    position: 'absolute',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  inputRoot: {
+    color: 'inherit',
+  },
+  inputInput: {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+    transition: theme.transitions.create('width'),
+    width: '100%',
+    [theme.breakpoints.up('md')]: {
+      width: '20ch',
+    },
+  },
+  sectionDesktop: {
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
+      display: 'flex',
+    },
+  },
+  sectionMobile: {
+    display: 'flex',
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+    },
+  },
+}));
+
+export default function Header() {
+  const classes = useStyles();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+
+  const isMenuOpen = Boolean(anchorEl);
+  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+  const handleProfileMenuOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMobileMenuClose = () => {
+    setMobileMoreAnchorEl(null);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+    handleMobileMenuClose();
+  };
+
+  const handleMobileMenuOpen = (event) => {
+    setMobileMoreAnchorEl(event.currentTarget);
+  };
+
+  const menuId = 'primary-search-account-menu';
+  const renderMenu = (
+    <Menu
+      anchorEl={anchorEl}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      id={menuId}
+      keepMounted
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      open={isMenuOpen}
+      onClose={handleMenuClose}
+    >
+      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+    </Menu>
+  );
+
+  const mobileMenuId = 'primary-search-account-menu-mobile';
+  const renderMobileMenu = (
+    <Menu
+      anchorEl={mobileMoreAnchorEl}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      id={mobileMenuId}
+      keepMounted
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      open={isMobileMenuOpen}
+      onClose={handleMobileMenuClose}
+    >
+      <MenuItem onClick={handleProfileMenuOpen}>
+        <IconButton
+          aria-label="account of current user"
+          aria-controls="primary-search-account-menu"
+          aria-haspopup="true"
+          color="inherit"
         >
-          <a
-            href="test"
-            className="
-              d-flex
-              align-items-center
-              mb-2 mb-lg-0
-              text-dark text-decoration-none
-            "
-          >
+          <AccountCircle />
+        </IconButton>
+        <p>Profile</p>
+      </MenuItem>
+    </Menu>
+  );
+
+  return (
+    <div className={classes.grow}>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography className={classes.title} variant="h6" noWrap>
             Shop
-          </a>
-
-          <ul
-            className="
-              nav
-              col-12 col-lg-auto
-              me-lg-auto
-              mb-2
-              justify-content-center
-              mb-md-0
-            "
-          >
-            <li>
-              <a href="/" className="nav-link px-2 link-dark">
-                상품 목록
-              </a>
-            </li>
-            <li>
-              <a href="/cart" className="nav-link px-2 link-dark">
-                장바구니
-              </a>
-            </li>
-            <li>
-              <a href="test" className="nav-link px-2 link-dark">
-                주문조회
-              </a>
-            </li>
-          </ul>
-
-          <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-            <input
-              type="search"
-              className="form-control"
-              placeholder="Search..."
-              aria-label="Search"
+          </Typography>
+          <div className={classes.search}>
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
+            <InputBase
+              placeholder="Search…"
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput,
+              }}
+              inputProps={{ 'aria-label': 'search' }}
             />
-          </form>
-
-          <div className="dropdown text-end">
-            <a
-              href="test"
-              className="d-block link-dark text-decoration-none dropdown-toggle"
-              id="dropdownUser1"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <img
-                src="https://github.com/kshired.png"
-                alt="mdo"
-                width="32"
-                height="32"
-                className="rounded-circle"
-              />
-            </a>
-            <ul
-              className="dropdown-menu text-small"
-              aria-labelledby="dropdownUser1"
-            >
-              <li>
-                <a className="dropdown-item" href="test">
-                  Profile
-                </a>
-              </li>
-              <li>
-                <hr className="dropdown-divider" />
-              </li>
-              <li>
-                <a className="dropdown-item" href="test">
-                  Sign out
-                </a>
-              </li>
-            </ul>
           </div>
-        </div>
-      </div>
-    </header>
+          <div className={classes.grow} />
+          <div className={classes.sectionDesktop}>
+            <IconButton
+              edge="end"
+              aria-label="account of current user"
+              aria-controls={menuId}
+              aria-haspopup="true"
+              onClick={handleProfileMenuOpen}
+              color="inherit"
+            >
+              <AccountCircle />
+            </IconButton>
+          </div>
+          <div className={classes.sectionMobile}>
+            <IconButton
+              aria-label="show more"
+              aria-controls={mobileMenuId}
+              aria-haspopup="true"
+              onClick={handleMobileMenuOpen}
+              color="inherit"
+            >
+              <MoreIcon />
+            </IconButton>
+          </div>
+        </Toolbar>
+      </AppBar>
+      {renderMobileMenu}
+      {renderMenu}
+    </div>
   );
 }
-
-export default Header;

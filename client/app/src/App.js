@@ -1,15 +1,18 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Items from './screens/Items';
-import Cart from './screens/Cart';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Album from './screens/Album';
+
 function App() {
   return (
     <Router>
       <Switch>
         <Route path="/cart">
-          <Cart></Cart>
+          <Header />
+          <Footer />
         </Route>
         <Route path="/">
-          <Items></Items>
+          <Album />
         </Route>
       </Switch>
     </Router>

@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Pagination from '@material-ui/lab/Pagination';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import axios from 'axios';
@@ -45,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Album() {
+export default function ItemList() {
   const classes = useStyles();
   const [totPage, setTotPage] = useState(1);
   const [cards, setCards] = useState([]);
@@ -86,9 +87,14 @@ export default function Album() {
                     <Typography>{card.price}원</Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small" color="primary">
-                      자세히 보기
-                    </Button>
+                    <Link
+                      to={`item/${card.id}`}
+                      style={{ color: 'inherit', textDecoration: 'inherit' }}
+                    >
+                      <Button size="small" color="primary">
+                        자세히 보기
+                      </Button>
+                    </Link>
                     <Button size="small" color="primary">
                       카트에 담기
                     </Button>

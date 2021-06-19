@@ -51,7 +51,9 @@ export default function Item({ match }) {
 
   useEffect(() => {
     async function getItem() {
-      const res = await axios.get(`http://52.79.121.63/items/${id}`);
+      const res = await axios.get(
+        `${process.env.REACT_APP_SERVER}/items/${id}`
+      );
       setItem(res.data.data);
     }
     getItem();

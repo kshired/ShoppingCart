@@ -78,7 +78,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Header() {
   const classes = useStyles();
-  const auth = false;
+  const auth = localStorage.getItem('accessToken') ? true : false;
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -102,6 +102,11 @@ export default function Header() {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
+  const handleSignOut = () => {
+    localStorage.removeItem('accessToken');
+    window.location.reload();
+  };
+
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
     <Menu
@@ -115,12 +120,23 @@ export default function Header() {
     >
       {auth ? (
         <div>
+          <Link
+            style={{ color: 'inherit', textDecoration: 'inherit' }}
+            to={'/cart'}
+          >
+            <MenuItem onClick={handleMenuClose}>Cart</MenuItem>
+          </Link>
           <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-          <MenuItem onClick={handleMenuClose}>Cart</MenuItem>
+          <MenuItem onClick={handleSignOut}>Sign out</MenuItem>
         </div>
       ) : (
         <div>
-          <MenuItem onClick={handleMenuClose}>Login</MenuItem>
+          <Link
+            style={{ color: 'inherit', textDecoration: 'inherit' }}
+            to={'/signin'}
+          >
+            <MenuItem onClick={handleMenuClose}>SignIn</MenuItem>
+          </Link>
         </div>
       )}
     </Menu>
@@ -139,10 +155,9 @@ export default function Header() {
     >
       {auth ? (
         <div>
-          <MenuItem onClick={handleMenuClose}>
-            <p>Profile</p>
-          </MenuItem>
+          <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
           <MenuItem onClick={handleMenuClose}>Cart</MenuItem>
+          <MenuItem onClick={handleSignOut}>Sign out</MenuItem>
         </div>
       ) : (
         <div>

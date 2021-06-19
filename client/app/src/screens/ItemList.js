@@ -53,7 +53,9 @@ export default function ItemList() {
 
   useEffect(() => {
     async function getTotalPage() {
-      const total = await axios.get('http://52.79.121.63/items/page');
+      const total = await axios.get(
+        `${process.env.REACT_APP_SERVER}/items/page`
+      );
       setTotPage(total.data.page);
       await handlePage([], 1);
     }
@@ -61,7 +63,9 @@ export default function ItemList() {
   }, []);
 
   const handlePage = async (_, value) => {
-    const resp = await axios.get(`http://52.79.121.63/items?page=${value}`);
+    const resp = await axios.get(
+      `${process.env.REACT_APP_SERVER}/items?page=${value}`
+    );
     setCards(resp.data.data);
   };
 

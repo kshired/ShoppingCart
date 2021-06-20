@@ -6,9 +6,13 @@ const getCartItems = async (req, res) => {
     where: {
       user_id,
     },
-    select: {
-      item_id: true,
-      count: true,
+    include: {
+      item: {
+        select: {
+          name: true,
+          price: true,
+        },
+      },
     },
   });
   res.status(200).send({

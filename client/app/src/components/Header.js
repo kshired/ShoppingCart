@@ -155,8 +155,13 @@ export default function Header() {
     >
       {auth ? (
         <div>
+          <Link
+            style={{ color: 'inherit', textDecoration: 'inherit' }}
+            to={'/cart'}
+          >
+            <MenuItem onClick={handleMenuClose}>Cart</MenuItem>
+          </Link>
           <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-          <MenuItem onClick={handleMenuClose}>Cart</MenuItem>
           <MenuItem onClick={handleSignOut}>Sign out</MenuItem>
         </div>
       ) : (

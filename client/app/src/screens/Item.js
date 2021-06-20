@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { TextField } from '@material-ui/core';
 import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
@@ -42,12 +43,17 @@ const useStyles = makeStyles((theme) => ({
   pagination: {
     marginBottom: theme.spacing(4),
   },
+  textField: {
+    width: '25',
+  },
 }));
 
-export default function Item({ match }) {
+export default function Item({ match, history }) {
   const classes = useStyles();
   const { id } = match.params;
-  const [item, setItem] = useState({});
+  const [item, setItem] = useState(null);
+  const [count, setCount] = useState(1);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     async function getItem() {
@@ -58,6 +64,41 @@ export default function Item({ match }) {
     }
     getItem();
   }, [id]);
+
+  const handleAddCart = async (event, value) => {
+    event.preventDefault();
+
+    if (!error) {
+      const token = localStorage.getItem('accessToken');
+      if (token === null) {
+        alert('로그인 해주세요!');
+        history.push('/signin');
+      }
+      try {
+        const resp = await axios.post(
+          `${process.env.REACT_APP_SERVER}/cart`,
+          {
+            item_id: item.id,
+            count,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        if (resp.data.ok) {
+          alert('카트에 담았습니다!');
+        } else {
+          alert('카트에 담지 못했습니다!');
+        }
+      } catch (err) {
+        alert('카트에 담지 못했습니다!');
+      }
+    } else {
+      return;
+    }
+  };
 
   return (
     <React.Fragment>
@@ -80,7 +121,35 @@ export default function Item({ match }) {
               </CardContent>
             </Card>
             <CardActions>
-              <Button size="small" color="primary">
+              <TextField
+                label="수량"
+                error={error}
+                helperText={
+                  error
+                    ? `수량에 문제가 있습니다 (최대수량 : ${item.stock_quantity})`
+                    : ''
+                }
+                onChange={(e) => {
+                  setCount(e.target.value);
+                  if (
+                    e.target.value <= item.stock_quantity &&
+                    e.target.value >= 1
+                  ) {
+                    setError(false);
+                  } else {
+                    setError(true);
+                  }
+                }}
+                className={classes.textfield}
+                InputProps={{
+                  inputProps: {
+                    min: 1,
+                    max: item.stock_quantity,
+                    defaultValue: 1,
+                  },
+                }}
+              ></TextField>
+              <Button size="small" color="primary" onClick={handleAddCart}>
                 카트에 담기
               </Button>
             </CardActions>

@@ -99,9 +99,6 @@ export default function ItemList() {
                         자세히 보기
                       </Button>
                     </Link>
-                    <Button size="small" color="primary">
-                      카트에 담기
-                    </Button>
                   </CardActions>
                 </Card>
               </Grid>
